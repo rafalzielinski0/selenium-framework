@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Verify the home page heading is visible after navigation","4463","homePageHeadingIsVisible()","","Sat Feb 21 18:02:58 UTC 2026","passed","Sat Feb 21 18:03:02 UTC 2026","","tests.HomePageTest","tests.HomePageTest","homePageHeadingIsVisible"
+"Valid credentials should redirect to the secure area with a success message","1558","successfulLogin()","","Sat Feb 21 18:03:06 UTC 2026","passed","Sat Feb 21 18:03:07 UTC 2026","","tests.LoginTest","tests.LoginTest","successfulLogin"
+"Submitting empty fields should show a validation error message","1335","emptyFieldsShowValidationError()","","Sat Feb 21 18:03:04 UTC 2026","passed","Sat Feb 21 18:03:06 UTC 2026","","tests.LoginTest","tests.LoginTest","emptyFieldsShowValidationError"
+"Wrong password should keep the user on the login page with an error message","2137","wrongPasswordShowsError()","","Sat Feb 21 18:03:02 UTC 2026","passed","Sat Feb 21 18:03:04 UTC 2026","","tests.LoginTest","tests.LoginTest","wrongPasswordShowsError"
