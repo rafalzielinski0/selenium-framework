@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Product Defects",
+    "messageRegex": ".*AssertionError.*|.*expected.*but was.*|.*shouldHave.*|.*shouldBe.*",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Test Defects",
+    "messageRegex": ".*NullPointerException.*|.*NoSuchElementException.*|.*StaleElementReferenceException.*|.*IndexOutOfBoundsException.*",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Infrastructure Problems",
+    "messageRegex": ".*SessionNotCreatedException.*|.*WebDriverException.*|.*TimeoutException.*|.*ConnectException.*",
+    "matchedStatuses": ["failed", "broken"]
+  },
+  {
+    "name": "Ignored Tests",
+    "matchedStatuses": ["skipped"]
+  }
+]

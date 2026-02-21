@@ -1,0 +1,15 @@
+# Gradle cache i build – nie kopiuj do obrazu
+.gradle/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Git
+.git/
+.gitignore
+
+# Lokalne wyniki i raporty
+allure-report/
