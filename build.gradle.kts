@@ -73,7 +73,7 @@ tasks.named("allureReport") {
 // Plugin zostawia katalog tam gdzie Gradle spodziewa się pliku-znacznika.
 // Gradle waliduje outputy tasków PRZED wykonaniem doFirst, więc kasujemy
 // ten katalog w fazie konfiguracji (przed walidacją).
-file("$buildDir/copy-categories").deleteRecursively()
+layout.buildDirectory.dir("copy-categories").get().asFile.deleteRecursively()
 
 tasks.withType<Test> {
     useJUnitPlatform()

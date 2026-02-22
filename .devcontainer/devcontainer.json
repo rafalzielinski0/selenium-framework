@@ -1,0 +1,31 @@
+{
+  "name": "selenium-framework-dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "workspaceFolder": "/workspace/selenium-framework",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace/selenium-framework,type=bind,consistency=cached"
+  ],
+
+  "remoteUser": "developer",
+
+  // Nadpisuje browserBinary z gradle.properties (tam jest ścieżka lokalnego wrappera Flatpak).
+  // Chrome w kontenerze jest zainstalowany natywnie pod /usr/bin/google-chrome.
+  // Gradle czyta zmienne ORG_GRADLE_PROJECT_* jako właściwości projektu.
+  "remoteEnv": {
+    "ORG_GRADLE_PROJECT_browserBinary": "/usr/bin/google-chrome",
+    // Przekaż klucz API Anthropic z hosta żeby Claude Code działał w kontenerze
+    "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+  },
+
+  // Uruchamia się raz po pierwszym stworzeniu kontenera
+  "postCreateCommand": "chmod +x gradlew && ./gradlew dependencies --configuration testRuntimeClasspath --quiet",
+
+  "customizations": {
+    "jetbrains": {
+      "backend": "IdeaC"
+    }
+  }
+}
